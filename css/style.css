@@ -30,6 +30,10 @@ html {
     color: #333;
 }
 
+.navbar-nav {
+    margin-left: auto;
+}
+
 .nav-link:hover {
     color: #F97300;
 }
