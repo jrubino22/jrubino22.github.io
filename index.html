@@ -1,53 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <link
-      rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
     />
     <link
-      rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans"
+      rel="stylesheet"
     />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
     <title>Joey's Portfolio</title>
+    <link
+      href="https://cdn.rawgit.com/michalsnik/aos/2.3.1/dist/aos.css"
+      rel="stylesheet"
+    />
   </head>
-
   <body>
+    <!-- Repo Button -->
+    <a
+      href="https://github.com/jrubino22/jrubino22.github.io"
+      class="repo-btn btn font-white rounded-pill position-fixed p-2 shadow-sm d-flex align-items-center"
+      id="floating-button"
+      target="_blank"
+      style="bottom: 20px; left: 20px"
+      >View This Website's Code</a
+    >
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
-        <a class="navbar-brand" href="#">Joey's Portfolio</a>
+        <a class="navbar-brand" href="#"> Joey's Portfolio </a>
         <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
           aria-controls="navbarNav"
           aria-expanded="false"
           aria-label="Toggle navigation"
+          class="navbar-toggler"
+          data-target="#navbarNav"
+          data-toggle="collapse"
+          type="button"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"> </span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
+              <a class="nav-link custom-nav-link" href="#about"> About </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#portfolio">Portfolio</a>
+              <a class="nav-link custom-nav-link" href="#portfolio">
+                Portfolio
+              </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
+              <a class="nav-link custom-nav-link" href="#contact"> Contact </a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-
     <!-- Header -->
     <header class="header text-center py-5">
       <div class="container">
@@ -55,16 +68,15 @@
         <p class="lead">Full stack developer and ecommerce professional</p>
       </div>
     </header>
-
     <!-- About Section -->
-    <section id="about" class="py-5">
+    <section class="py-5" data-aos="fade-right" id="about">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-4 text-center">
             <img
-              src="images/headshot.png"
               alt="Joey"
               class="img-fluid rounded-circle w-75"
+              src="images/headshot.png"
             />
           </div>
           <div class="col-md-8">
@@ -81,7 +93,7 @@
             <p>
               My hands-on experience spans across various facets of web
               development, with a special focus on Shopify, Node.js, and React.
-              Through me work experience, I've honed my expertise in delivering
+              Through my work experience, I've honed my expertise in delivering
               efficient solutions, balancing technical needs with optimal user
               experiences. My work in these roles encompassed diverse tasks,
               from web development and analytics optimization to SEO and
@@ -99,417 +111,169 @@
         </div>
       </div>
     </section>
-
     <!-- Portfolio Section -->
-    <section id="portfolio" class="py-5 bg-light">
-      <div class="container">
-        <h2 class="text-center mb-4">Featured Projects</h2>
-        <div class="row">
-          <!-- React Nucampsite App Card -->
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card">
-              <img
-                src="images/herbgrinders.png"
-                class="card-img-top"
-                alt="React Nucampsite App"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Next.js - HerbGrinders.com</h5>
-                <button
-                  type="button"
-                  class="btn btn-primary"
-                  data-toggle="modal"
-                  data-target="#herbgrinders-modal"
-                >
-                  Learn More
-                </button>
-              </div>
-            </div>
-          </div>
+    <section class="py-5 bg-light" data-aos="fade-up" id="portfolio">
+      <project-cards
+        title-1="Next.js - HerbGrinders.com"
+        img-alt-1="Herbgrinders.com screenshot"
+        img-path-1="images/herbgrinders.png"
+        modal-id-1="herbgrinders-modal"
+        
+        title-2="Bootstrap - Shalom Today Website"
+        img-alt-2="Shalom Today site screenshot"
+        img-path-2="images/shalom-schedule.png"
+        modal-id-2="shalom-modal"
 
-          <!-- Shalom Today Bootstrap Site Card -->
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card">
-              <img
-                src="images/shalom-schedule.png"
-                class="card-img-top"
-                alt="Shalom Today Bootstrap Site"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Shalom Today Bootstrap Site</h5>
-                <button
-                  type="button"
-                  class="btn btn-primary"
-                  data-toggle="modal"
-                  data-target="#shalom-modal"
-                >
-                  Learn More
-                </button>
-              </div>
-            </div>
-          </div>
+        title-3="React Native - Event App"
+        img-alt-3="Event app screenshot"
+        img-path-3="images/event-eats-screenshot.png"
+        modal-id-3="event-app-modal"
 
-          <!-- React Native Event App Card -->
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card">
-              <img
-                src="images/event-eats-screenshot.png"
-                class="card-img-top"
-                alt="React Native Event App"
-              />
-              <div class="card-body">
-                <h5 class="card-title">React Native Event App</h5>
-                <button
-                  type="button"
-                  class="btn btn-primary"
-                  data-toggle="modal"
-                  data-target="#event-app-modal"
-                >
-                  Learn More
-                </button>
-              </div>
-            </div>
-          </div>
+        title-4="Shopify - Wholesale Website"
+        img-alt-4="Wholesale site screenshot"
+        img-path-4="images/vs-wholesale-home.png"
+        modal-id-4="vs-wholesale-modal"
 
-          <!-- VS Wholesale Shopify Store Card -->
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card">
-              <img
-                src="images/vs-wholesale-home.png"
-                class="card-img-top"
-                alt="VS Wholesale Shopify Store"
-              />
-              <div class="card-body">
-                <h5 class="card-title">VS Wholesale Shopify Store</h5>
-                <button
-                  type="button"
-                  class="btn btn-primary"
-                  data-toggle="modal"
-                  data-target="#vs-wholesale-modal"
-                >
-                  Learn More
-                </button>
-              </div>
-            </div>
-          </div>
+        title-5="Node - Membership App"
+        img-alt-5="Membership app screenshot"
+        img-path-5="images/vs-members.png"
+        modal-id-5="members-modal"
 
-          <!-- Violina Bootstrap Site Card -->
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card">
-              <img
-                src="images/vs-members.png"
-                class="card-img-top"
-                alt="Violina Bootstrap Site"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Node Membership App</h5>
-                <button
-                  type="button"
-                  class="btn btn-primary"
-                  data-toggle="modal"
-                  data-target="#members-modal"
-                >
-                  Learn More
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Node Warranty App Card -->
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card">
-              <img
-                src="images/vs-warranty-app.png"
-                class="card-img-top"
-                alt="Node Warranty App"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Node Warranty App</h5>
-                <button
-                  type="button"
-                  class="btn btn-primary"
-                  data-toggle="modal"
-                  data-target="#warranty-modal"
-                >
-                  Learn More
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        title-6="Node - Warranty App"
+        img-alt-6="Warranty app screenshot"
+        img-path-6="images/vs-warranty-app.png"
+        modal-id-6="warranty-modal"
+      ></project-cards>
     </section>
+    <!-- Modals -->
+    <project-modal
+      modal-id="herbgrinders-modal"
+      title="HerbGrinders.com"
+      body="HerbGrinders.com is a solo project of mine and is built from
+      scratch. I utilized Next.JS, Tailwind CSS, and MongoDB to create a
+      fully functional ecommerce store. Development of HerbGrinders.com
+      is still in progress, but as of now it has an admin panel for
+      content management, analytics, and more. It also features
+      login/signup flow, automated order emails, csv product import,
+      product reviews, and a blog."
+      footer-text-1="Visit Website"
+      footer-link-1="https://www.herbgrinders.com/"
+    ></project-modal>
 
-    <!-- HG App Modal -->
-    <div id="herbgrinders-modal" class="modal fade" role="dialog">
-      <div class="modal-dialog modal-lg mt-auto mb-auto" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">HerbGrinders.com</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <p>
-              HerbGrinders.com is a solo project of mine and is built from
-              scratch. I utilized Next.JS, Tailwind CSS, and MongoDB to create a
-              fully functional ecommerce store. Development of HerbGrinders.com
-              is still in progress, but as of now it has an admin panel for
-              content management, analytics, and more. It also features
-              login/signup flow, automated order emails, csv product import,
-              product reviews, and a blog.
-            </p>
-          </div>
-          <div class="modal-footer">
-            <a href="https://www.herbgrinders.com/" class="btn btn-primary"
-              >Visit Website</a
-            >
-          </div>
-        </div>
-      </div>
-    </div>
+    <project-modal
+      modal-id="shalom-modal"
+      title="Shalom Today Bootstrap Site"
+      body="A simple static website I made for a local 12-step meeting hall. This
+      site features an embedded Google Calendar containing the meeting
+      schedule, and an embedded Google Map of the Site's location."
+      footer-text-1="Visit Website"
+      footer-link-1="https://shalomtodayaa.oso-aa.org/"
+      footer-text-2="Github Reopsitory"
+      footer-link-2="https://github.com/jrubino22/shalom-site"
+      footer-class-2="btn btn-secondary"
+    ></project-modal>
 
-    <!-- Shalom Today Bootstrap Site Modal -->
-    <div id="shalom-modal" class="modal fade" role="dialog">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Shalom Today Bootstrap Site</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <p>
-              A simple website I made for a local 12-step meeting hall. This
-              site features an embedded Google Calendar containing the meeting
-              schedule, and an embedded Google Map of the Site's location.
-            </p>
-            <div class="text-center">
-              <a href="#" class="btn btn-primary">Visit Website</a>
-              <a
-                href="https://github.com/jrubino22/shalom-site"
-                class="btn btn-secondary"
-                >Github Repository</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <project-modal
+      modal-id="event-app-modal"
+      title="React Native Event App"
+      body="A front end application that manages its state with redux and
+      connects with a backend server (Node/Express/Mongo) for
+      authentication purposes. This application's purpose is to handle
+      food orders of event attendees."
+      footer-text-1="Front End Code"
+      footer-link-1="https://github.com/jrubino22/event-eats"
+      footer-text-2="Back End Code"
+      footer-link-2="https://github.com/jrubino22/eventeatsServer"
+      footer-class-2="btn btn-secondary"
+    ></project-modal>
 
-    <!-- React Native Event App Modal -->
-    <div id="event-app-modal" class="modal fade" role="dialog">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">React Native Event App</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <p>
-              A front end application that manages its state with redux and
-              connects with a backend server (Node/Express/Mongo) for
-              authentication purposes. This application's purpose is to handle
-              food orders of event attendees.
-            </p>
-            <div class="text-center">
-              <a
-                href="https://github.com/jrubino22/event-eats"
-                class="btn btn-primary"
-                >Front End Code</a
-              >
-              <a
-                href="https://github.com/jrubino22/eventeatsServer"
-                class="btn btn-secondary"
-                >Back End Code</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <project-modal
+      modal-id="vs-wholesale-modal"
+      title="Shopify Wholesale Website"
+      body="I was the lead developer for a project to create a custom shopify
+      wholesale site. This project involved bringing over all
+      products from the retail store as well as many customizations to
+      the theme. These included making different quantities available to
+      different customers, different MOQ for different customers, and
+      rendering different views to different customers. Customization
+      was done via html, css, liquid, and javaScript."
+      footer-text-1="Visit Website"
+      footer-link-1="https://wholesale.vsyndicate.com/"
+    ></project-modal>
 
-    <!-- VS Wholesale Shopify Store Modal -->
-    <div id="vs-wholesale-modal" class="modal fade" role="dialog">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">V Syndicate Wholesale Shopify Website</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <p>
-              I was the lead developer for a project to create a custom shopify
-              store for V Syndicate. This project involved bringing over all
-              products from the retail store as well as many customizations to
-              the theme. These included making different quantities available to
-              different customers, different MOQ for different customers, and
-              rendering different views to different customers. Customization
-              was done via html, css, liquid, and javaScript.
-            </p>
-            <div class="text-center">
-              <a
-                href="https://wholesale.vsyndicate.com/"
-                class="btn btn-primary"
-                >Visit Website</a
-              >
-              <a
-                href="https://github.com/jrubino22/vs-wholesale"
-                class="btn btn-secondary"
-                >Github Repository</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <project-modal
+      modal-id="members-modal"
+      title="Node Membership App"
+      body=" A production membership app I built that handles a wholesale
+      membership program. This app seemlessly integrates with Shopify to
+      allow customers to sign up and view membership status from their
+      account in the wholesale site. Company employees use this app
+      directly in the Shopify admin in order to edit or delete
+      memberships. This was built using Koa, Next.JS, and MongoDB."
+      footer-text-1="Github Repository"
+      footer-link-1="https://github.com/jrubino22/syndicate-member-app"
+    ></project-modal>
 
-    <!-- Members Modal -->
-    <div id="members-modal" class="modal fade" role="dialog">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Node Membership App</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <p>
-              A production membership app I built that handles a wholesale
-              membership program. This app seemlessly integrates with Shopify to
-              allow customers to sign up and view membership status from their
-              account in wholesale site. Company employees use this app directly
-              in the Shopify admin in order to edit or delete memberships. This
-              was built using Koa, Next.JS, and MongoDB.
-            </p>
-            <div class="text-center">
-              <a
-                href="https://github.com/jrubino22/syndicate-member-app"
-                class="btn btn-primary"
-                >Github Repository</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Node Warranty App Modal -->
-    <div id="warranty-modal" class="modal fade" role="dialog">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Node Warranty App</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <p>
-              A full stack application developed to handle warranties. Client is
-              able to make API calls to register a product, view registered
-              product for specific customers, and change status of a warranty.
-              In order to validate registration, serial numbers are moved from a
-              "serial numbers" collection to the "registered products
-              collection" upon registration. The admin panel (pictured) gives
-              authenticated users the ability to see all warranties and change
-              their status from "active" to "inactive". Technologies used
-              include Koa, React, Next.js, and the Fetch API. This app is
-              currently running on Heroku.
-            </p>
-            <div class="text-center">
-              <a
-                href="https://github.com/jrubino22/register-product-app"
-                class="btn btn-primary"
-                >Github Repository</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
+    <project-modal
+      modal-id="warranty-modal"
+      title="Node Warranty App"
+      body='A full stack application developed to handle warranties. Client is
+      able to make API calls to register a product, view registered
+      product for specific customers, and change status of a warranty.
+      In order to validate registration, serial numbers are moved from a
+      "serial numbers" collection to the "registered products
+      collection" upon registration. The admin panel (pictured) gives
+      authenticated users the ability to see all warranties and change
+      their status from "active" to "inactive". Technologies used
+      include Koa, React, Next.js, and the Fetch API. This app is
+      currently running on Heroku.'
+      footer-text-1="Github Repository"
+      footer-link-1="https://github.com/jrubino22/register-product-app"
+    ></project-modal>
     <!-- Contact Section -->
-    <section id="contact" class="py-5">
+    <section class="py-5" data-aos="fade-left" id="contact">
       <div class="container">
         <h2 class="text-center">Contact Me</h2>
         <div class="row mt-4">
           <div class="col-md-8 offset-md-2">
             <form
-              id="contact-form"
               action="https://formspree.io/f/xknljgyp"
+              id="contact-form"
               method="POST"
             >
               <div class="form-group">
                 <input
-                  type="text"
                   class="form-control"
                   name="name"
                   placeholder="Name"
+                  type="text"
                 />
               </div>
               <div class="form-group">
                 <input
-                  type="email"
                   class="form-control"
                   name="email"
                   placeholder="Email"
+                  type="email"
                 />
               </div>
               <div class="form-group">
                 <input
-                  type="text"
                   class="form-control"
                   name="subject"
                   placeholder="Subject"
+                  type="text"
                 />
               </div>
               <div class="form-group">
                 <textarea
                   class="form-control"
-                  rows="5"
                   name="message"
                   placeholder="Your Message"
+                  rows="5"
                 ></textarea>
               </div>
-              <button type="submit" class="btn btn-primary">
+              <button class="btn btn-primary" type="submit">
                 Send Message
               </button>
               <p id="contact-form-status"></p>
@@ -518,14 +282,12 @@
         </div>
       </div>
     </section>
-
     <!-- Footer -->
     <footer class="text-center py-4">
       <div class="container">
-        <p>&copy; 2023 Joey's Portfolio</p>
+        <p>© 2023 Joey's Portfolio</p>
       </div>
     </footer>
-
     <script>
       var form = document.getElementById('contact-form');
 
@@ -566,15 +328,20 @@
       }
       form.addEventListener('submit', handleSubmit);
     </script>
+    <script src="js/main.js"></script>
     <script
-      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      crossorigin="anonymous"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
     ></script>
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
       crossorigin="anonymous"
+      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
     ></script>
+    <script src="https://cdn.rawgit.com/michalsnik/aos/2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
