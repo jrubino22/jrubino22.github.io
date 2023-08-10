@@ -26,7 +26,7 @@
       class="repo-btn btn font-white rounded-pill position-fixed p-2 shadow-sm d-flex align-items-center"
       id="floating-button"
       target="_blank"
-      style="bottom: 20px; left: 20px"
+      style="bottom: 10px; right: 10px"
       >View This Website's Code</a
     >
     <!-- Navbar -->
@@ -62,18 +62,19 @@
       </div>
     </nav>
     <!-- Header -->
-    <header class="header text-center py-5">
+    <header class="header text-center py-5 px-5">
       <div class="container">
         <h1 class="display-4">Joseph Rubino</h1>
         <p class="lead">Full stack developer and ecommerce professional</p>
       </div>
     </header>
     <!-- About Section -->
-    <section class="py-5" data-aos="fade-right" id="about">
+    <section class="py-5" id="about">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-4 text-center">
             <img
+              data-aos="flip-left"
               alt="Joey"
               class="img-fluid rounded-circle w-75"
               src="images/headshot.png"
@@ -112,33 +113,28 @@
       </div>
     </section>
     <!-- Portfolio Section -->
-    <section class="py-5 bg-light" data-aos="fade-up" id="portfolio">
+    <section class="py-5 bg-light" id="portfolio">
       <project-cards
         title-1="Next.js - HerbGrinders.com"
         img-alt-1="Herbgrinders.com screenshot"
         img-path-1="images/herbgrinders.png"
         modal-id-1="herbgrinders-modal"
-        
         title-2="Bootstrap - Shalom Today Website"
         img-alt-2="Shalom Today site screenshot"
         img-path-2="images/shalom-schedule.png"
         modal-id-2="shalom-modal"
-
         title-3="React Native - Event App"
         img-alt-3="Event app screenshot"
         img-path-3="images/event-eats-screenshot.png"
         modal-id-3="event-app-modal"
-
         title-4="Shopify - Wholesale Website"
         img-alt-4="Wholesale site screenshot"
         img-path-4="images/vs-wholesale-home.png"
         modal-id-4="vs-wholesale-modal"
-
         title-5="Node - Membership App"
         img-alt-5="Membership app screenshot"
         img-path-5="images/vs-members.png"
         modal-id-5="members-modal"
-
         title-6="Node - Warranty App"
         img-alt-6="Warranty app screenshot"
         img-path-6="images/vs-warranty-app.png"
@@ -231,7 +227,7 @@
       footer-link-1="https://github.com/jrubino22/register-product-app"
     ></project-modal>
     <!-- Contact Section -->
-    <section class="py-5" data-aos="fade-left" id="contact">
+    <section class="py-5" id="contact">
       <div class="container">
         <h2 class="text-center">Contact Me</h2>
         <div class="row mt-4">
@@ -240,6 +236,7 @@
               action="https://formspree.io/f/xknljgyp"
               id="contact-form"
               method="POST"
+              data-aos="flip-right"
             >
               <div class="form-group">
                 <input
@@ -276,7 +273,7 @@
               <button class="btn btn-primary" type="submit">
                 Send Message
               </button>
-              <p id="contact-form-status"></p>
+              <p class="mt-2" id="contact-form-status"></p>
             </form>
           </div>
         </div>

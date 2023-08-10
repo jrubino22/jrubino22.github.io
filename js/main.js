@@ -8,7 +8,7 @@ class ProjectCards extends HTMLElement {
             const imgPath = this.getAttribute(`img-path-${i}`)
             const modalId = this.getAttribute(`modal-id-${i}`)
             featuredProjects +=`
-                <div class="col-lg-4 col-md-6 mb-4">
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in-up">
                     <div class="card">
                         <img
                             alt="${imgAlt}"
@@ -86,3 +86,12 @@ class ProjectModal extends HTMLElement {
 
 customElements.define('project-modal', ProjectModal);
 
+document.addEventListener('click', (event) => {
+    if (event.target.classList.contains('nav-link')) {
+        const toggler = document.querySelector('.navbar-toggler')
+        const navCollapse = document.querySelector('#navbarNav')
+        toggler.setAttribute('aria-expanded', 'false')
+        toggler.classList.add('collapsed')
+        navCollapse.classList.remove('show')
+    }
+})
