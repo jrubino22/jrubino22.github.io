@@ -4,94 +4,157 @@
     <meta charset="utf-8" />
     <meta content="IE=edge" http-equiv="X-UA-Compatible" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans"
-      rel="stylesheet"
-    />
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
     <title>Joey's Portfolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#1C1C1E',
+              secondary: '#5C5C5E',
+              muted: '#8E8E93',
+              cream: '#FAFAF8',
+              sand: '#F0EFEB',
+              accent: '#C45B3E',
+              'accent-dark': '#A84830',
+            },
+            fontFamily: {
+              heading: ['Outfit', 'system-ui', 'sans-serif'],
+              body: ['Source Sans 3', 'system-ui', 'sans-serif'],
+            },
+          },
+        },
+      }
+    </script>
+    
+    <!-- Fonts -->
     <link
-      href="https://cdn.rawgit.com/michalsnik/aos/2.3.1/dist/aos.css"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Source+Sans+3:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+    
+    <!-- AOS Animation -->
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.3.1/dist/aos.css" rel="stylesheet" />
+    
+    <style>
+      html { scroll-behavior: smooth; }
+      body { -webkit-font-smoothing: antialiased; }
+      ::selection { background-color: #C45B3E; color: #FAFAF8; }
+    </style>
   </head>
-  <body>
-    <!-- Repo Button -->
+  
+  <body class="font-body text-secondary bg-cream leading-relaxed overflow-x-clip">
+    
+    <!-- Floating Repo Button -->
     <a
       href="https://github.com/jrubino22/jrubino22.github.io"
-      class="repo-btn btn font-white rounded-pill position-fixed p-2 shadow-sm d-flex align-items-center"
-      id="floating-button"
       target="_blank"
-      style="bottom: 10px; right: 10px"
-      >View This Website's Code</a
+      class="fixed bottom-4 right-4 z-50 bg-primary text-cream font-semibold text-sm px-5 py-3 rounded-full shadow-lg hover:bg-accent hover:-translate-y-0.5 transition-all duration-200 animate-fade-in"
     >
+      View This Website's Code
+    </a>
+    
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container">
-        <a class="navbar-brand" href="#"> Joey's Portfolio </a>
-        <button
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          class="navbar-toggler"
-          data-target="#navbarNav"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span class="navbar-toggler-icon"> </span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link custom-nav-link" href="#about"> About </a>
+    <nav class="bg-cream border-b border-gray-200 sticky top-0 z-40">
+      <div class="max-w-6xl mx-auto px-4 py-4">
+        <div class="flex items-center justify-between">
+          <a href="#" class="font-heading font-bold text-xl text-primary hover:text-accent transition-colors">
+            Joey's Portfolio
+          </a>
+          
+          <!-- Mobile Menu Button -->
+          <button 
+            id="mobile-menu-btn" 
+            class="lg:hidden p-2 text-secondary hover:text-accent"
+            aria-label="Toggle menu"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+          
+          <!-- Desktop Nav -->
+          <ul class="hidden lg:flex items-center gap-1">
+            <li>
+              <a href="#about" class="px-4 py-2 rounded-lg text-secondary font-medium hover:text-accent hover:bg-accent/10 transition-all">
+                About
+              </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link custom-nav-link" href="#portfolio">
+            <li>
+              <a href="#portfolio" class="px-4 py-2 rounded-lg text-secondary font-medium hover:text-accent hover:bg-accent/10 transition-all">
                 Portfolio
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link custom-nav-link" href="#contact"> Contact </a>
+            <li>
+              <a href="#contact" class="px-4 py-2 rounded-lg text-secondary font-medium hover:text-accent hover:bg-accent/10 transition-all">
+                Contact
+              </a>
             </li>
           </ul>
         </div>
+        
+        <!-- Mobile Nav -->
+        <ul id="mobile-menu" class="hidden lg:hidden flex-col gap-2 pt-4 pb-2">
+          <li>
+            <a href="#about" class="block px-4 py-2 rounded-lg text-secondary font-medium hover:text-accent hover:bg-accent/10 transition-all text-center">
+              About
+            </a>
+          </li>
+          <li>
+            <a href="#portfolio" class="block px-4 py-2 rounded-lg text-secondary font-medium hover:text-accent hover:bg-accent/10 transition-all text-center">
+              Portfolio
+            </a>
+          </li>
+          <li>
+            <a href="#contact" class="block px-4 py-2 rounded-lg text-secondary font-medium hover:text-accent hover:bg-accent/10 transition-all text-center">
+              Contact
+            </a>
+          </li>
+        </ul>
       </div>
     </nav>
+    
     <!-- Header -->
-    <header class="header text-center py-5 px-5">
-      <div class="container">
-        <h1 class="display-4">Joseph Rubino</h1>
-        <p class="lead">Full stack developer and ecommerce professional</p>
+    <header class="bg-gradient-to-br from-primary to-zinc-800 text-cream py-24 px-6 relative overflow-hidden">
+      <div class="absolute -top-1/2 -right-1/4 w-[600px] h-[600px] bg-accent/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="max-w-6xl mx-auto text-center relative z-10">
+        <h1 class="font-heading font-bold text-4xl md:text-5xl lg:text-6xl tracking-tight mb-4">
+          Joseph Rubino
+        </h1>
+        <p class="text-muted text-lg md:text-xl">
+          Full stack developer and ecommerce professional
+        </p>
       </div>
     </header>
+    
     <!-- About Section -->
-    <section class="py-5" id="about">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-4 text-center">
+    <section id="about" class="py-20 px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="flex flex-col md:flex-row items-center gap-12">
+          <div class="md:w-1/3 text-center">
             <img
               data-aos="flip-left"
               alt="Joey"
-              class="img-fluid rounded-circle w-75"
-              src="images/headshot.png"
+              src="images/headshot2.png"
+              class="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover border-4 border-gray-200 mx-auto hover:scale-105 hover:shadow-xl transition-all duration-300"
             />
           </div>
-          <div class="col-md-8">
-            <h2>About Me</h2>
-            <p>
+          <div class="md:w-2/3">
+            <h2 class="font-heading font-semibold text-3xl text-primary mb-2">About Me</h2>
+            <div class="w-10 h-1 bg-accent rounded mb-6"></div>
+            <p class="mb-4">
               I am a passionate Full Stack Developer with a unique blend of
               skills stemming from both marketing and full-stack web development
               backgrounds. After earning my BA in Marketing, with a minor in
               Applied Computing from the University of Washington, I was
               intrigued by the synergy between technology and marketing. This
-              drove me to complete two bootcamps at Nucamp, graduating with
-              honors in full stack and mobile development.
+              drove me to dive headfirst into the world of tech by earning a 
+              BS in Software Engineering from Western Governors University.
             </p>
-            <p>
+            <p class="mb-4">
               My hands-on experience spans across various facets of web
               development, with a special focus on Shopify, Node.js, and React.
               Through my work experience, I've honed my expertise in delivering
@@ -112,224 +175,355 @@
         </div>
       </div>
     </section>
+    
     <!-- Portfolio Section -->
-    <section class="py-5 bg-light" id="portfolio">
-      <project-cards
-        title-1="HerbGrinders.com"
-        img-alt-1="Herbgrinders.com screenshot"
-        img-path-1="images/herbgrinders.png"
-        modal-id-1="herbgrinders-modal"
-        title-2="Yellow Leaf Hammocks"
-        img-alt-2="Yellow Leaf Hammocks site screenshot"
-        img-path-2="images/yellow-leaf.png"
-        modal-id-2="ylh-modal"
-        title-3="React Native - Event App"
-        img-alt-3="Event app screenshot"
-        img-path-3="images/event-eats-screenshot.png"
-        modal-id-3="event-app-modal"
-        title-4="V Syndicate Wholesale"
-        img-alt-4="Wholesale site screenshot"
-        img-path-4="images/vs-wholesale-home.png"
-        modal-id-4="vs-wholesale-modal"
-        title-5="Mack Weldon"
-        img-alt-5="Mack Weldon site screenshot"
-        img-path-5="images/mackweldon.png"
-        modal-id-5="mw-modal"
-        title-6="Game Picks"
-        img-alt-6="Game Picks app screenshot"
-        img-path-6="images/gamepicks.png"
-        modal-id-6="gamepicks-modal"
-      ></project-cards>
-    </section>
-    <!-- Modals -->
-    <project-modal
-      modal-id="herbgrinders-modal"
-      title="HerbGrinders.com"
-      body="HerbGrinders.com is a solo project of mine and is built from
-      scratch. I utilized Next.JS, Tailwind CSS, and MongoDB to create a
-      fully functional ecommerce store. Development of HerbGrinders.com
-      is still in progress, but as of now it has an admin panel for
-      content management, analytics, and more. It also features
-      login/signup flow, automated order emails, csv product import,
-      product reviews, and a blog."
-      footer-text-1="Visit Website"
-      footer-link-1="https://www.herbgrinders.com/"
-    ></project-modal>
-
-    <project-modal
-      modal-id="ylh-modal"
-      title="Yellow Leaf Hammocks"
-      body="A Shopify website redesign project. developed 
-      with a custom-built theme featuring Alpine.JS, SCSS, and Liquid. I was 
-      the sole developer on this project."
-      footer-text-1="Visit Website"
-      footer-link-1="https://www.yellowleafhammocks.com/"
-      footer-class-2="btn btn-secondary"
-    ></project-modal>
-
-    <project-modal
-      modal-id="event-app-modal"
-      title="React Native Event App"
-      body="A front end application that manages its state with redux and
-      connects with a backend server (Node/Express/Mongo) for
-      authentication purposes. This application's purpose is to handle
-      food orders of event attendees."
-      footer-text-1="Front End Code"
-      footer-link-1="https://github.com/jrubino22/event-eats"
-      footer-text-2="Back End Code"
-      footer-link-2="https://github.com/jrubino22/eventeatsServer"
-      footer-class-2="btn btn-secondary"
-    ></project-modal>
-
-    <project-modal
-      modal-id="vs-wholesale-modal"
-      title="Shopify Wholesale Website"
-      body="I was the lead developer for a project to create a custom shopify
-      wholesale site. This project involved bringing over all
-      products from the retail store as well as many customizations to
-      the theme. These included making different quantities available to
-      different customers, different MOQ for different customers, and
-      rendering different views to different customers. Customization
-      was done via html, css, liquid, and javaScript."
-      footer-text-1="Visit Website"
-      footer-link-1="https://wholesale.vsyndicate.com/"
-    ></project-modal>
-
-    <project-modal
-      modal-id="mw-modal"
-      title="Mack Weldon"
-      body="A Shopify site for a large direct to consumer ecommerce
-      client. I led development on this project that involved transitioning
-      from an outdated codebase, to a modern, custom-built Vue.js and Alpine.js 
-      based theme."
-      footer-text-1="Visit Website"
-      footer-link-1="https://mackweldon.com/"
-    ></project-modal>
-
-    <project-modal
-      modal-id="gamepicks-modal"
-      title="Node Warranty App"
-      body='A full stack personal project. The Game Picks web app 
-      allows users to create accounts, join groups with friends and family,
-      and pick the winners of upcoming sporting events. This app was built
-      using a Java Spring Boot backend, a TypeScript React frontend, and a 
-      MySQL database.'
-      footer-text-1="Github Repository"
-      footer-link-1="https://github.com/jrubino22/game-picks"
-    ></project-modal>
-    <!-- Contact Section -->
-    <section class="py-5" id="contact">
-      <div class="container">
-        <h2 class="text-center">Contact Me</h2>
-        <div class="row mt-4">
-          <div class="col-md-8 offset-md-2">
-            <form
-              action="https://formspree.io/f/xknljgyp"
-              id="contact-form"
-              method="POST"
-              data-aos="flip-right"
-            >
-              <div class="form-group">
-                <input
-                  class="form-control"
-                  name="name"
-                  placeholder="Name"
-                  type="text"
-                />
-              </div>
-              <div class="form-group">
-                <input
-                  class="form-control"
-                  name="email"
-                  placeholder="Email"
-                  type="email"
-                />
-              </div>
-              <div class="form-group">
-                <input
-                  class="form-control"
-                  name="subject"
-                  placeholder="Subject"
-                  type="text"
-                />
-              </div>
-              <div class="form-group">
-                <textarea
-                  class="form-control"
-                  name="message"
-                  placeholder="Your Message"
-                  rows="5"
-                ></textarea>
-              </div>
-              <button class="btn btn-primary" type="submit">
-                Send Message
+    <section id="portfolio" class="py-20 px-4 bg-sand">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="font-heading font-semibold text-3xl text-primary text-center mb-12">Featured Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Project Card 1 -->
+          <div data-aos="zoom-in-up" class="bg-cream rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden">
+            <img alt="Goodranchers.com screenshot" src="images/goodranchers.png" class="w-full h-48 object-cover bg-sand" />
+            <div class="p-6">
+              <h3 class="font-heading font-semibold text-lg text-primary mb-4">Good Ranchers</h3>
+              <button 
+                onclick="openModal('goodranchers-modal')" 
+                class="bg-accent text-cream font-semibold px-5 py-2.5 rounded-lg hover:bg-accent-dark hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200"
+              >
+                Learn More
               </button>
-              <p class="mt-2" id="contact-form-status"></p>
-            </form>
+            </div>
           </div>
+          
+          <!-- Project Card 2 -->
+          <div data-aos="zoom-in-up" class="bg-cream rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden">
+            <img alt="Yellow Leaf Hammocks site screenshot" src="images/yellow-leaf.png" class="w-full h-48 object-cover bg-sand" />
+            <div class="p-6">
+              <h3 class="font-heading font-semibold text-lg text-primary mb-4">Yellow Leaf Hammocks</h3>
+              <button 
+                onclick="openModal('ylh-modal')" 
+                class="bg-accent text-cream font-semibold px-5 py-2.5 rounded-lg hover:bg-accent-dark hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+          
+          <!-- Project Card 3 -->
+          <div data-aos="zoom-in-up" class="bg-cream rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden">
+            <img alt="Event app screenshot" src="images/event-eats-screenshot.png" class="w-full h-48 object-cover bg-sand" />
+            <div class="p-6">
+              <h3 class="font-heading font-semibold text-lg text-primary mb-4">React Native - Event App</h3>
+              <button 
+                onclick="openModal('event-app-modal')" 
+                class="bg-accent text-cream font-semibold px-5 py-2.5 rounded-lg hover:bg-accent-dark hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+          
+          <!-- Project Card 4 -->
+          <div data-aos="zoom-in-up" class="bg-cream rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden">
+            <img alt="Wholesale site screenshot" src="images/vs-wholesale-home.png" class="w-full h-48 object-cover bg-sand" />
+            <div class="p-6">
+              <h3 class="font-heading font-semibold text-lg text-primary mb-4">V Syndicate Wholesale</h3>
+              <button 
+                onclick="openModal('vs-wholesale-modal')" 
+                class="bg-accent text-cream font-semibold px-5 py-2.5 rounded-lg hover:bg-accent-dark hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+          
+          <!-- Project Card 5 -->
+          <div data-aos="zoom-in-up" class="bg-cream rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden">
+            <img alt="Mack Weldon site screenshot" src="images/mackweldon.png" class="w-full h-48 object-cover bg-sand" />
+            <div class="p-6">
+              <h3 class="font-heading font-semibold text-lg text-primary mb-4">Mack Weldon</h3>
+              <button 
+                onclick="openModal('mw-modal')" 
+                class="bg-accent text-cream font-semibold px-5 py-2.5 rounded-lg hover:bg-accent-dark hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+          
+          <!-- Project Card 6 -->
+          <div data-aos="zoom-in-up" class="bg-cream rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden">
+            <img alt="Game Picks app screenshot" src="images/gamepicks.png" class="w-full h-48 object-cover bg-sand" />
+            <div class="p-6">
+              <h3 class="font-heading font-semibold text-lg text-primary mb-4">Game Picks</h3>
+              <button 
+                onclick="openModal('gamepicks-modal')" 
+                class="bg-accent text-cream font-semibold px-5 py-2.5 rounded-lg hover:bg-accent-dark hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+          
         </div>
       </div>
     </section>
+    
+    <!-- Modals -->
+    <div id="goodranchers-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+      <div class="bg-cream rounded-xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-auto">
+        <div class="flex items-center justify-between p-6 border-b border-gray-200">
+          <h3 class="font-heading font-semibold text-xl text-primary">Good Ranchers</h3>
+          <button onclick="closeModal('goodranchers-modal')" class="text-muted hover:text-primary text-2xl leading-none">&times;</button>
+        </div>
+        <div class="p-6 text-secondary">
+          <p>Goodranchers.com is a production headless ecommerce store built with Next.js. It is a custom built application focused on providing a seamless subscription experience for customers. I was a key contributor to the development of this project.</p>
+        </div>
+        <div class="flex gap-3 p-6 border-t border-gray-200">
+          <a href="https://www.goodranchers.com/" target="_blank" class="bg-accent text-cream font-semibold px-5 py-2.5 rounded-lg hover:bg-accent-dark transition-colors">
+            Visit Website
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div id="ylh-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+      <div class="bg-cream rounded-xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-auto">
+        <div class="flex items-center justify-between p-6 border-b border-gray-200">
+          <h3 class="font-heading font-semibold text-xl text-primary">Yellow Leaf Hammocks</h3>
+          <button onclick="closeModal('ylh-modal')" class="text-muted hover:text-primary text-2xl leading-none">&times;</button>
+        </div>
+        <div class="p-6 text-secondary">
+          <p>A Shopify website redesign project, developed with a custom-built theme featuring Alpine.JS, SCSS, and Liquid. I was the sole developer on this project.</p>
+        </div>
+        <div class="flex gap-3 p-6 border-t border-gray-200">
+          <a href="https://www.yellowleafhammocks.com/" target="_blank" class="bg-accent text-cream font-semibold px-5 py-2.5 rounded-lg hover:bg-accent-dark transition-colors">
+            Visit Website
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div id="event-app-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+      <div class="bg-cream rounded-xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-auto">
+        <div class="flex items-center justify-between p-6 border-b border-gray-200">
+          <h3 class="font-heading font-semibold text-xl text-primary">React Native Event App</h3>
+          <button onclick="closeModal('event-app-modal')" class="text-muted hover:text-primary text-2xl leading-none">&times;</button>
+        </div>
+        <div class="p-6 text-secondary">
+          <p>A front end application that manages its state with redux and connects with a backend server (Node/Express/Mongo) for authentication purposes. This application's purpose is to handle food orders of event attendees.</p>
+        </div>
+        <div class="flex gap-3 p-6 border-t border-gray-200">
+          <a href="https://github.com/jrubino22/event-eats" target="_blank" class="bg-accent text-cream font-semibold px-5 py-2.5 rounded-lg hover:bg-accent-dark transition-colors">
+            Front End Code
+          </a>
+          <a href="https://github.com/jrubino22/eventeatsServer" target="_blank" class="bg-sand text-primary font-semibold px-5 py-2.5 rounded-lg border border-gray-200 hover:bg-primary hover:text-cream transition-colors">
+            Back End Code
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div id="vs-wholesale-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+      <div class="bg-cream rounded-xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-auto">
+        <div class="flex items-center justify-between p-6 border-b border-gray-200">
+          <h3 class="font-heading font-semibold text-xl text-primary">Shopify Wholesale Website</h3>
+          <button onclick="closeModal('vs-wholesale-modal')" class="text-muted hover:text-primary text-2xl leading-none">&times;</button>
+        </div>
+        <div class="p-6 text-secondary">
+          <p>I was the lead developer for a project to create a custom shopify wholesale site. This project involved bringing over all products from the retail store as well as many customizations to the theme. These included making different quantities available to different customers, different MOQ for different customers, and rendering different views to different customers. Customization was done via html, css, liquid, and javaScript.</p>
+        </div>
+        <div class="flex gap-3 p-6 border-t border-gray-200">
+          <a href="https://wholesale.vsyndicate.com/" target="_blank" class="bg-accent text-cream font-semibold px-5 py-2.5 rounded-lg hover:bg-accent-dark transition-colors">
+            Visit Website
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div id="mw-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+      <div class="bg-cream rounded-xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-auto">
+        <div class="flex items-center justify-between p-6 border-b border-gray-200">
+          <h3 class="font-heading font-semibold text-xl text-primary">Mack Weldon</h3>
+          <button onclick="closeModal('mw-modal')" class="text-muted hover:text-primary text-2xl leading-none">&times;</button>
+        </div>
+        <div class="p-6 text-secondary">
+          <p>A Shopify site for a large direct to consumer ecommerce client. I led development on this project that involved transitioning from an outdated codebase, to a modern, custom-built Vue.js and Alpine.js based theme.</p>
+        </div>
+        <div class="flex gap-3 p-6 border-t border-gray-200">
+          <a href="https://mackweldon.com/" target="_blank" class="bg-accent text-cream font-semibold px-5 py-2.5 rounded-lg hover:bg-accent-dark transition-colors">
+            Visit Website
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div id="gamepicks-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+      <div class="bg-cream rounded-xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-auto">
+        <div class="flex items-center justify-between p-6 border-b border-gray-200">
+          <h3 class="font-heading font-semibold text-xl text-primary">Game Picks</h3>
+          <button onclick="closeModal('gamepicks-modal')" class="text-muted hover:text-primary text-2xl leading-none">&times;</button>
+        </div>
+        <div class="p-6 text-secondary">
+          <p>A full stack personal project. The Game Picks web app allows users to create accounts, join groups with friends and family, and pick the winners of upcoming sporting events. This app was built using a Java Spring Boot backend, a TypeScript React frontend, and a MySQL database.</p>
+        </div>
+        <div class="flex gap-3 p-6 border-t border-gray-200">
+          <a href="https://github.com/jrubino22/game-picks" target="_blank" class="bg-accent text-cream font-semibold px-5 py-2.5 rounded-lg hover:bg-accent-dark transition-colors">
+            Github Repository
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4">
+      <div class="max-w-2xl mx-auto">
+        <h2 class="font-heading font-semibold text-3xl text-primary text-center mb-2">Contact Me</h2>
+        <div class="w-10 h-1 bg-accent rounded mx-auto mb-10"></div>
+        
+        <form
+          action="https://formspree.io/f/xknljgyp"
+          id="contact-form"
+          method="POST"
+          data-aos="flip-right"
+          class="space-y-5"
+        >
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            class="w-full px-4 py-3 rounded-lg border border-gray-200 bg-cream focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            class="w-full px-4 py-3 rounded-lg border border-gray-200 bg-cream focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all"
+          />
+          <input
+            type="text"
+            name="subject"
+            placeholder="Subject"
+            class="w-full px-4 py-3 rounded-lg border border-gray-200 bg-cream focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all"
+          />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            rows="5"
+            class="w-full px-4 py-3 rounded-lg border border-gray-200 bg-cream focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all resize-none"
+          ></textarea>
+          <button
+            type="submit"
+            class="bg-accent text-cream font-semibold px-6 py-3 rounded-lg hover:bg-accent-dark hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200"
+          >
+            Send Message
+          </button>
+          <p id="contact-form-status" class="mt-2"></p>
+        </form>
+      </div>
+    </section>
+    
     <!-- Footer -->
-    <footer class="text-center py-4">
-      <div class="container">
-        <p>© 2025 Joey's Portfolio</p>
+    <footer class="bg-primary text-muted py-8 text-center">
+      <div class="max-w-6xl mx-auto px-4">
+        <p class="text-sm">© 2025 Joey's Portfolio</p>
       </div>
     </footer>
+    
+    <!-- Scripts -->
     <script>
-      var form = document.getElementById('contact-form');
-
+      // Mobile menu toggle
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('flex');
+      });
+      
+      // Close mobile menu on link click
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          mobileMenu.classList.remove('flex');
+        });
+      });
+      
+      // Modal functions
+      function openModal(id) {
+        const modal = document.getElementById(id);
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      }
+      
+      function closeModal(id) {
+        const modal = document.getElementById(id);
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
+      
+      // Close modal on backdrop click
+      document.querySelectorAll('[id$="-modal"]').forEach(modal => {
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) {
+            closeModal(modal.id);
+          }
+        });
+      });
+      
+      // Close modal on Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          document.querySelectorAll('[id$="-modal"]').forEach(modal => {
+            if (!modal.classList.contains('hidden')) {
+              closeModal(modal.id);
+            }
+          });
+        }
+      });
+      
+      // Contact form
+      const form = document.getElementById('contact-form');
+      
       async function handleSubmit(event) {
         event.preventDefault();
-        var status = document.getElementById('contact-form-status');
-        var data = new FormData(event.target);
+        const status = document.getElementById('contact-form-status');
+        const data = new FormData(event.target);
+        
         fetch(event.target.action, {
           method: form.method,
           body: data,
-          headers: {
-            Accept: 'application/json',
-          },
+          headers: { Accept: 'application/json' },
         })
           .then((response) => {
             if (response.ok) {
-              status.classList.add('text-success');
-              status.innerHTML =
-                'Thanks for your submission! I will get back to you shortly.';
+              status.className = 'mt-2 text-green-600';
+              status.innerHTML = 'Thanks for your submission! I will get back to you shortly.';
               form.reset();
             } else {
-              status.classList.add('text-danger');
+              status.className = 'mt-2 text-red-500';
               response.json().then((data) => {
                 if (Object.hasOwn(data, 'errors')) {
-                  status.innerHTML = data['errors']
-                    .map((error) => error['message'])
-                    .join(', ');
+                  status.innerHTML = data['errors'].map((error) => error['message']).join(', ');
                 } else {
-                  status.innerHTML =
-                    'Oops! There was a problem submitting your form';
+                  status.innerHTML = 'Oops! There was a problem submitting your form';
                 }
               });
             }
           })
-          .catch((error) => {
+          .catch(() => {
             status.innerHTML = 'Oops! There was a problem submitting your form';
           });
       }
+      
       form.addEventListener('submit', handleSubmit);
     </script>
-    <script src="js/main.js"></script>
-    <script
-      crossorigin="anonymous"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-    ></script>
-    <script
-      crossorigin="anonymous"
-      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-    ></script>
+    
+    <!-- AOS Animation -->
     <script src="https://cdn.rawgit.com/michalsnik/aos/2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
+    <script>AOS.init();</script>
   </body>
 </html>
